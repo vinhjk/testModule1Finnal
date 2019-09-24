@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+    let Can = document.getElementById('myCanvas');
+    let context = Can.getContext("2d");
+    var Rectangle = function (x, y, width, height, color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.getX = function () {
+            return this.x;
+        };
+        this.getY = function () {
+            return this.y;
+        };
+        this.getWidth = function () {
+            return this.width;
+        };
+        this.getHeight = function () {
+            return this.height;
+        };
+        this.getColor = function () {
+            return this.color;
+        };
+        this.setX = function (x) {
+            this.x = x;
+        };
+        this.setY = function (y) {
+            this.y = y;
+        };
+        this.setWidth = function (width) {
+            this.width = width
+        };
+        this.setHeight = function (height) {
+            this.height = height;
+        };
+        this.setColor = function (color) {
+            this.color = color;
+        };
+        this.render = function () {
+            context.beginPath();
+            context.fillStyle = this.color;
+            context.rect(x, y, width, height);
+            context.fill();
+            context.closePath();
+        }
+    };
+    let rectangle = new Rectangle(10, 10, 200, 100, '#000000');
+    rectangle.render();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function printFibonacci(number) {
+
+        let f0 = 0;
+        let f1 = 1;
+        let fn = f1;
+        document.write("1" + "<br/>");
+        for (let i = 1; i < number; i++) {
+            fn = f0 + f1;
+            f0 = f1;
+            f1 = fn;
+            let isSmallerNumber = fn < number;
+            if (isSmallerNumber) {
+                document.write(fn + "<br>");
+            }
+        }
+
+    }
+    let inputNumber = parseInt(prompt("Enter a number :"));
+    printFibonacci(inputNumber);
+</script>
+</body>
+</html>
